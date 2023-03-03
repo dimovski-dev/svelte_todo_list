@@ -7,11 +7,18 @@
 
     try {
         const savedTodos = localStorage.getItem('todos');
-        todoList = JSON.parse(savedTodos);
+		const parsedTodos = JSON.parse(savedTodos);
+
+		if(parsedTodos.length){
+			todoList =  parsedTodos;
+		}else{
+			todoList = []
+		}
+        
     } catch (e) {
         todoList = [];
     }
-	
+
     let isFormShown = false;
     let uuid = '';
 
@@ -22,6 +29,8 @@
     const onAddTodoHandler = (todo, event) => {
         event.preventDefault();
         uuid = uuidv4();
+
+		
         todoList = [...todoList, { ...todo, id: uuid }];
 
         localStorage.setItem('todos', JSON.stringify(todoList));

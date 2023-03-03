@@ -22,7 +22,7 @@
         </fieldset>
         <fieldset>
             <label for="todo-description">Todo Description</label>
-            <input on:change={e => onChangeTodoHandler('todoDescription', e.currentTarget.value)} id="todo-description" name="todo-description" type="text">
+            <textarea on:change={e => onChangeTodoHandler('todoDescription', e.currentTarget.value)} id="todo-description" name="todo-description" type="text"> </textarea>
         </fieldset>
         <fieldset>
             <label for="todo-is-resolved">Is task resolved?</label>

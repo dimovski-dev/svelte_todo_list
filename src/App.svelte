@@ -41,7 +41,7 @@
     <section class="todo-list">
         {#if isFormShown}
             <AddTodo {onAddTodoHandler} />
-        {:else if todoList.length}
+        {:else if todoList?.length}
             {#each todoList as todo}
                 <Todo
                     todo_id={todo.id}
